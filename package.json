@@ -1,0 +1,27 @@
+{
+  "name": "graphql-bangkok-2023",
+  "version": "1.0.0",
+  "description": "Code for my talk at GraphQL Bangkok 31/07/2023 https://www.meetup.com/graphql-bangkok/events/294721074/",
+  "main": "index.js",
+  "keywords": [],
+  "author": "dan@rocketconnect.co.uk",
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-tools/schema": "^9.0.4",
+    "@graphql-tools/utils": "^10.0.4",
+    "@graphql-yoga/node": "^2.13.13",
+    "@opentelemetry/context-async-hooks": "^1.15.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.41.1",
+    "@opentelemetry/resources": "^1.15.1",
+    "@opentelemetry/sdk-trace-base": "^1.15.1",
+    "@opentelemetry/api": "^1.4.1",
+    "@prisma/client": "^5.0.0",
+    "@prisma/instrumentation": "^5.0.0",
+    "@types/node": "^20.4.5",
+    "gql-tag": "^1.0.1",
+    "graphql-otel": "^0.0.10",
+    "prisma": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
