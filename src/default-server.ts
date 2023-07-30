@@ -4,7 +4,7 @@ import gql from "gql-tag";
 
 const typeDefs = gql`
   type User {
-    name: String @upperCase
+    name: String
     age: Int
   }
 
