@@ -1,12 +1,14 @@
 import * as api from "@opentelemetry/api";
 import { AsyncHooksContextManager } from "@opentelemetry/context-async-hooks";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
+import { registerInstrumentations } from "@opentelemetry/instrumentation";
 import { Resource } from "@opentelemetry/resources";
 import {
   BasicTracerProvider,
   SimpleSpanProcessor,
 } from "@opentelemetry/sdk-trace-base";
 import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions";
+import { PrismaInstrumentation } from "@prisma/instrumentation";
 
 export function setupOtel() {
   const contextManager = new AsyncHooksContextManager().enable();
@@ -23,6 +25,10 @@ export function setupOtel() {
   });
 
   provider.addSpanProcessor(new SimpleSpanProcessor(otlpTraceExporter));
+
+  registerInstrumentations({
+    instrumentations: [new PrismaInstrumentation()],
+  });
 
   provider.register();
 }
